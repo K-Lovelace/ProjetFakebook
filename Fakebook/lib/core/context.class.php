@@ -2,9 +2,9 @@
 
 class context{
     private $data;
-    const SUCCESS="Success";
-    const ERROR="Error";
-    const NONE="None";
+    const SUCCESS="success";
+    const ERROR="error";
+    const NONE="none";
     private $name;
     private static $instance=null;
 	
