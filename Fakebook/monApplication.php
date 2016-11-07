@@ -20,7 +20,7 @@ $context = context::getInstance();
 $context->init($nameApp);
 
 $view=$context->executeAction($action, $_REQUEST);
-
+$notif=false;
 //traitement des erreurs de bases, reste a traiter les erreurs d'inclusion
 if($view===false){
 	$notif = "L'action ".$action." n'existe pas!";
