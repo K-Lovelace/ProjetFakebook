@@ -2,12 +2,13 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Ton appli !</title>
+	<link rel="stylesheet" type="text/css" href="css/<?php echo $nameApp ?>.css">
+	<title>PatateBook</title>
    
 </head>
 <body>
-<!-- j'ai le droit de mettre des commentaires dans mon fichier HTML -->
-	<h2> Bienvenue sur <?php echo $nameApp ?> </h2>
+	<div class="notif-msg">There has been an error: <?php $notif ?></div>
+	<h2> Bienvenue sur <?php echo ucfirst($nameApp) ?> </h2>
 	<?php include($template_view); ?>
     
 </body>
