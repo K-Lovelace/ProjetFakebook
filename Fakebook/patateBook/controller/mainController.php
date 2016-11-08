@@ -16,14 +16,26 @@ class mainController{
     return context::SUCCESS;
   }
 
-  public static function login($request, $context){ 
-    if ($context->getSessionAttribute("currentUser") == false){
-        return context::ERROR;
-    }    
-    
-    else {
-      return context::SUCCESS;
-    }    
-  }
+	public static function login($request, $context){ 
+
+	    if ($context->getSessionAttribute("currentUser") == false){
+
+	    	if( isset($_POST['user']) ){
+
+	    		if ($_POST["user"] == false){
+					$context->setSessionAttribute("currentUser",$context->getUserByLoginAndPass());
+				}
+			}		
+
+			else{
+				return context::ERROR;
+			}
+	    	
+			
+		}
+
+		return context::SUCCESS;
+
+	}
 
 }
