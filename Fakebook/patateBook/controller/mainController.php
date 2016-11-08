@@ -21,14 +21,22 @@ class mainController{
 	    if ($context->getSessionAttribute("currentUser") == false){
 	    	if(isset($_POST['user'])) 
         {
-					$context->setSessionAttribute("currentUser", utilisateurTable::getUserByLoginAndPass($_POST['user']['name'], $_POST['user']['password']));
-          $context->notif = $context->getSessionAttribute("currentUser")->nom." has been logged in";
+          $user = utilisateurTable::getUserByLoginAndPass($_POST['user']['name'], $_POST['user']['password']);
+          if($user == false) {
+            $context->notif = "Erreur: User does not exist";
+            return context::ERROR;
+          }
+					$context->setSessionAttribute("currentUser", $user);
+          $context->notif = "Bonjour ".$context->getSessionAttribute("currentUser")->nom."!";
         }		
 
 			else{
 				return context::ERROR;
 			}
 		}
+    else {
+      $context->notif = "Already signed in";
+    }
 
 		return context::SUCCESS;
 
