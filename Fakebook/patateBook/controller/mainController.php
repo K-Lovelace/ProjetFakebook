@@ -17,12 +17,13 @@ class mainController{
   }
 
   public static function login($request, $context){ 
+    $context->request = $request;
     if ($context->getSessionAttribute("currentUser") == false){
         return context::ERROR;
     }    
     
     else {
-        return context::SUCCESS;
+      return context::SUCCESS;
     }    
   }
 
