@@ -1,11 +1,12 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', on);
 //nom de l'application
 $nameApp = "patateBook";
 
 // Inclusion des classes et librairies
 require_once 'lib/core.php';
-require_once 'api/controller/apiController.php';
+require_once 'api/controller/mainController.php';
 
 
 //action par défaut

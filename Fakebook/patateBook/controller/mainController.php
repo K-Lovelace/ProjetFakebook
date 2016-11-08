@@ -19,23 +19,19 @@ class mainController{
 	public static function login($request, $context){ 
 
 	    if ($context->getSessionAttribute("currentUser") == false){
-
-	    	if( isset($_POST['user']) ){
-
-	    		if ($_POST["user"] == false){
-					$context->setSessionAttribute("currentUser",$context->getUserByLoginAndPass());
-				}
-			}		
+	    	if(isset($_POST['user'])) 
+        {
+					$context->setSessionAttribute("currentUser", utilisateurTable::getUserByLoginAndPass($_POST['user']['name'], $_POST['user']['password']));
+          $context->notif = $context->getSessionAttribute("currentUser")->name."has been logged in";
+        }		
 
 			else{
 				return context::ERROR;
 			}
-	    	
-			
 		}
 
 		return context::SUCCESS;
 
 	}
-
 }
+?>

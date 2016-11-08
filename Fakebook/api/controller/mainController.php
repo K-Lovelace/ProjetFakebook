@@ -11,7 +11,7 @@ class mainController{
   }
 
   public static function logout($request,$context) {
-    $context->setSessionAttribute('currentUser');
+    $context->setSessionAttribute('currentUser', false);
     return context::SUCCESS;
   }
 }
