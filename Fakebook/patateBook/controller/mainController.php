@@ -22,7 +22,7 @@ class mainController{
 	    	if(isset($_POST['user'])) 
         {
 					$context->setSessionAttribute("currentUser", utilisateurTable::getUserByLoginAndPass($_POST['user']['name'], $_POST['user']['password']));
-          $context->notif = $context->getSessionAttribute("currentUser")->name."has been logged in";
+          $context->notif = $context->getSessionAttribute("currentUser")->nom." has been logged in";
         }		
 
 			else{
