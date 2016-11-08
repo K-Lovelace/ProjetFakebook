@@ -7,6 +7,7 @@ class context{
     const NONE="none";
     private $name;
     private static $instance=null;
+    public $notif=false;
 	
 	 /**
      * @return context

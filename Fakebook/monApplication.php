@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', on);
 
 //nom de l'application
 $nameApp = "patateBook";
@@ -20,10 +22,10 @@ $context = context::getInstance();
 $context->init($nameApp);
 
 $view=$context->executeAction($action, $_REQUEST);
-$notif=false;
+
 //traitement des erreurs de bases, reste a traiter les erreurs d'inclusion
 if($view===false){
-	$notif = "L'action ".$action." n'existe pas!";
+	$context->notif = "L'action ".$action." n'existe pas!";
 	$action = "error";
 	$view = "error";
 }
