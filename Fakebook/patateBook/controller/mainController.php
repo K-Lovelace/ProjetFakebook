@@ -17,7 +17,6 @@ class mainController{
   }
 
 	public static function login($request, $context){ 
-
 	    if ($context->getSessionAttribute("currentUser") == false){
 	    	if(isset($_POST['user'])) 
         {
