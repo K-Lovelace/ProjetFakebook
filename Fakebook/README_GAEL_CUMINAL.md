@@ -1,0 +1,1 @@
+L'appel à des méthodes n'étant pas définies dans PHP comme findByIndentifiant se fait grace à la méthode magique __call. Doctrine surcharge cette méthode pour que les fonctions du type "findByX" appellent une fonction (bien définie) du type findBy("nom" => X).
