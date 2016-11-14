@@ -18,7 +18,31 @@ public static function getUserByLoginAndPass($login,$pass){
 	return $user; 
 }
 
+// @Author : PierreRudelou
+public static function getUserById($id){
+	$em = dbconnection::getInstance()->getEntityManager() ;
 
+	$userRepository = $em->getRepository('utilisateur');
+	$user = $userRepository->findOneBy(['id' => $id]);	
+	
+	if ($user == false){
+		echo 'Erreur sql';
+	}
+	return $user; 
+
+}
+
+// @Author : PierreRudelou
+public static function getUsers(){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$userRepository = $em->getRepository('utilisateur');
+	$user = $userRepository->findAll();
+	
+	if ($user == false){
+		echo 'Erreur sql';
+	}
+	return $user; 
 }
 
 ?>
