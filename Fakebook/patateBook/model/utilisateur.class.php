@@ -31,6 +31,11 @@ class utilisateur{
 
 	/** @Column(type="datetime") */ 
 	public $date_de_naissance;
+
+	// public function formattedBirthDate()
+	// {
+	// 	return self->date_de_naissance;
+	// }
 	
 }
 

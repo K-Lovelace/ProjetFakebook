@@ -13,7 +13,7 @@ class message{
 	 */ 
 	public $id;
 
-	/** @Column(type="interger") 
+	/** @Column(type="integer") 
 	 *	@ManyToOne(targetEntity="utilisateur")
 	*/ 
 	public $emetteur;

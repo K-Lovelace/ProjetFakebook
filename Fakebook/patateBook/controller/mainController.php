@@ -20,15 +20,18 @@ class mainController{
   public static function showMessage($request,$context)
   {
     $context->dest = utilisateurTable::getUserById($request['id']);
-    $context->messages = messageTable::getMessages($request['id']);
-    if ($context->messages == false || $context->dest == false){
+    if ($context->dest == false){
+      $context->notif = "No user with id ".$request['id'];
       return context::ERROR;
     }
 
-    else{
-      return context::SUCCESS;
+    $context->messages = messageTable::getMessages($request['id']);
+    if ($context->messages == false){
+      $context->notif = "This user has no messages!";
+      return context::ERROR;
     }
-    
+
+    return context::SUCCESS;    
 
 
   }
