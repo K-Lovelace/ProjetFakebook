@@ -7,7 +7,7 @@
 
 class messageTable {
 
- // @Author : PierreRudelou
+ // @Author=PierreRudelou
 	public static function getMessages($id)
   {
     $em = dbconnection::getInstance()->getEntityManager() ;

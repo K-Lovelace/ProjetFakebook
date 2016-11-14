@@ -18,7 +18,7 @@ public static function getUserByLoginAndPass($login,$pass){
 	return $user; 
 }
 
-// @Author : PierreRudelou
+// @Author=PierreRudelou
 public static function getUserById($id){
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
@@ -32,7 +32,7 @@ public static function getUserById($id){
 
 }
 
-// @Author : PierreRudelou
+// @Author=PierreRudelou
 public static function getUsers(){
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
