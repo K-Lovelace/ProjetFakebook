@@ -2,7 +2,7 @@
 /*
  * All doc on :
  * Toutes les actions disponibles dans l'application 
- * 
+ * @author : Gael Cuminal
  */
 
 class mainController{
