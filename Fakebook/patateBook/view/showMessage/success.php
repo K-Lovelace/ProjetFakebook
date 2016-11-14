@@ -1,6 +1,6 @@
 <!-- @author = Gael Cuminal -->
-
-Message de : <?= $dest->nom ?> <?= $dest->prenom ?> <?= $dest->identifiant ?> <?= $dest->formattedDate() ?>
-<?php foreach (messageTable::getMessages($user->id) as $message) { ?>
+<?= var_dump($context->dest) ?>
+Message de : <?= $context->dest->nom ?> <?= $context->dest->prenom ?> <?= $context->dest->identifiant ?> <?= $context->dest->formattedDate() ?>
+<?php foreach ($context->messages as $message) { ?>
 --> <?php include '_message.php';?>
 <?php } ?>

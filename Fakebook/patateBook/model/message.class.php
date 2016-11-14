@@ -34,12 +34,7 @@ class message{
 	public $post;
 
 	/** @Column(type="integer") */ 
-	public $aimer;
-
-	public function formattedDate()
-	{
-		return $post->formattedDate() 
-	}
+	// public $aimer;
 	
 }
 
