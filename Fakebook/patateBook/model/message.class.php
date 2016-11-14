@@ -34,7 +34,7 @@ class message{
 	public $post;
 
 	/** @Column(type="integer") */ 
-	// public $aimer;
+	public $aime;
 	
 }
 
