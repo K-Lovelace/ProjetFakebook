@@ -2,7 +2,7 @@
 /*
  * All doc on :
  * Toutes les actions disponibles dans l'application 
- *
+ * 
  */
 
 class mainController{
@@ -19,12 +19,14 @@ class mainController{
  // @Author : PierreRudelou
   public static function showMessage($request,$context)
   {
-    if (messageTable::getMessages() == false){
-          return context::ERROR;
+    $dest = userTable::getUserById($request['id']);
+    $messages = $messageTable::getMessages($request['id'])
+    if ($messages = false || $dest = false){
+      return context::ERROR;
     }
 
     else{
-          return context::SUCCESS;
+      return context::SUCCESS;
     }
     
 

@@ -1,7 +1,7 @@
 <!-- @author = Gael Cuminal -->
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', on);
+ini_set('display_errors', 'on');
 //nom de l'application
 $nameApp = "patateBook";
 
