@@ -16,6 +16,21 @@ class mainController{
     return context::SUCCESS;
   }
 
+ // @Author : PierreRudelou
+  public static function showMessage($request,$context)
+  {
+    if (messageTable::getMessages() == false){
+          return context::ERROR;
+    }
+
+    else{
+          return context::SUCCESS;
+    }
+    
+
+
+  }
+
 	public static function login($request, $context){ 
 	    if ($context->getSessionAttribute("currentUser") == false){
 	    	if(isset($_POST['user'])) 
