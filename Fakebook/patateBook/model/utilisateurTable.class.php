@@ -44,5 +44,5 @@ public static function getUsers(){
 	}
 	return $user; 
 }
-
+}
 ?>

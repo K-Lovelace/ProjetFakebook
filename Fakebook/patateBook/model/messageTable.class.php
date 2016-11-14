@@ -13,9 +13,9 @@ class messageTable {
     $em = dbconnection::getInstance()->getEntityManager() ;
     $messageRepository = $em->getRepository('message');
 
-    $message = $userRepository->findByDestinataire($id);
+    $messages = $messageRepository->findBy(['destinataire' => $id]);
 
-    return $message;
+    return $messages;
   }
 
 }

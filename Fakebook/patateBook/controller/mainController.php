@@ -19,9 +19,9 @@ class mainController{
  // @Author : PierreRudelou
   public static function showMessage($request,$context)
   {
-    $dest = userTable::getUserById($request['id']);
-    $messages = $messageTable::getMessages($request['id'])
-    if ($messages = false || $dest = false){
+    $context->dest = utilisateurTable::getUserById($request['id']);
+    $context->messages = messageTable::getMessages($request['id']);
+    if ($context->messages == false || $context->dest == false){
       return context::ERROR;
     }
 
