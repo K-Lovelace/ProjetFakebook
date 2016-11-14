@@ -16,7 +16,7 @@ class mainController{
     return context::SUCCESS;
   }
 
- // @Author : PierreRudelou
+ // @Author=PierreRudelou
   public static function showMessage($request,$context)
   {
     $context->dest = utilisateurTable::getUserById($request['id']);
@@ -36,6 +36,7 @@ class mainController{
 
   }
 
+ // @Author=PierreRudelou
 	public static function login($request, $context){ 
 	    if ($context->getSessionAttribute("currentUser") == false){
 	    	if(isset($_POST['user'])) 
