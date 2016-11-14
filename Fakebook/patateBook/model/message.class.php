@@ -4,7 +4,6 @@
  * @Entity
  * @Table(name="fredouil.message")
  * @author = Gael CUminal
-
  */
 class message{
 
@@ -13,24 +12,32 @@ class message{
 	 */ 
 	public $id;
 
-	/** @Column(type="integer") 
-	 *	@ManyToOne(targetEntity="utilisateur")
-	*/ 
+	/** 
+   * @ManyToOne(targetEntity="utilisateur")
+   * @JoinColumn(nullable=false, name="emetteur", referencedColumnName="id")
+   * @var utilisateur emetteur
+   */ 
 	public $emetteur;
 		
-	/** @Column(type="integer") 
-	 *	@ManyToOne(targetEntity="utilisateur")
-	*/ 
+	/**	
+	 * @ManyToOne(targetEntity="utilisateur")
+	 * @JoinColumn(nullable=false, name="destinataire", referencedColumnName="id")
+   * @var utilisateur destinataire
+	 */ 
 	public $destinataire;
 
-	/** @Column(type="string") 
-	 *	@ManyToOne(targetEntity="utilisateur")
-	*/ 
+	/**	
+	 * @ManyToOne(targetEntity="utilisateur")
+	 * @JoinColumn(nullable=false, name="parent", referencedColumnName="id")
+   * @var utilisateur parent	 
+   */ 
 	public $parent;
 
-	/** @Column(type="integer") 
-	 *	@ManyToOne(targetEntity="post")
-	*/ 
+	/** 
+   * @OneToOne(targetEntity="post") 
+   * @JoinColumn(nullable=false, name="post", referencedColumnName="id")
+   * @var post post   
+   */ 
 	public $post;
 
 	/** @Column(type="integer") */ 

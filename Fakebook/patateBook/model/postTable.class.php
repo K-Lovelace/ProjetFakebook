@@ -3,7 +3,7 @@
 
 class postTable {
 
-public function getPostById($id)
+public static function getPostById($id)
 {
 		
 	$em = dbconnection::getInstance()->getEntityManager() ;
