@@ -2,7 +2,7 @@
 
 /** 
  * @Entity
- * @Table(name="fredouil.message")
+ * @Table(name="fredouil.post")
  * @author = PierreRudelou
  */
 class post{
