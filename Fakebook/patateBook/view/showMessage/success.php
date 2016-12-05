@@ -1,6 +1,6 @@
 <!-- @author = Gael Cuminal -->
-<?= var_dump($context->dest) ?>
-Message de : <?= $context->dest->nom ?> <?= $context->dest->prenom ?> <?= $context->dest->identifiant ?> <?= $context->dest->formattedDate() ?>
+Message de : <?= $context->dest->nom ?> <?= $context->dest->prenom ?> <?= $context->dest->identifiant ?>
 <?php foreach ($context->messages as $message) { ?>
+<hr>
 --> <?php include '_message.php';?>
 <?php } ?>

@@ -31,6 +31,19 @@ class utilisateur{
 
 	/** @Column(type="datetime") */ 
 	public $date_de_naissance;
+
+	/** @OneToMany(targetEntity="message", mappedBy="destinataire")*/
+	// public $message;
+
+	// function __construct()
+	// {
+	// 	$this->message = new ArrayCollection();
+	// }
+
+	public function formattedBirthDate()
+	{
+		return $this->date_de_naissance;
+	}
 	
 }
 
