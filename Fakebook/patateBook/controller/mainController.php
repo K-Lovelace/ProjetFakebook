@@ -78,7 +78,7 @@ class mainController{
       return $context::ERROR;
     }
 
-    if(is_set($request["user"])) {
+    if(isset($request["user"])) {
       //A user was passed through parameters
       $user = utilisateurTable::getUserById($request["user"]);
       if($user == false) {
