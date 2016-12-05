@@ -17,7 +17,7 @@
 <!-- @author = Gael Cuminal -->
 	<div class="notif-msg <?php if($context->notif != false) {echo 'in';} ?>"><?php echo $context->notif; ?></div>
 		<div class="container">
-			<div class="row">
+			<div class="row" id="content">
 				<header class="col-xs-12"><?php include $header_view; ?></header>
 				<aside class="col-md-3 hidden-md-down">
 					<?php include $left_view; ?>

@@ -12,9 +12,6 @@ public static function getUserByLoginAndPass($login,$pass){
 	$userRepository = $em->getRepository('utilisateur');
 	$user = $userRepository->findOneBy(array('identifiant' => $login, 'pass' => sha1($pass)));	
 	
-	if ($user == false){
-		echo 'Erreur sql';
-	}
 	return $user; 
 }
 
@@ -25,9 +22,6 @@ public static function getUserById($id){
 	$userRepository = $em->getRepository('utilisateur');
 	$user = $userRepository->findOneBy(['id' => $id]);	
 	
-	if ($user == false){
-		echo 'Erreur sql';
-	}
 	return $user; 
 
 }
@@ -39,9 +33,6 @@ public static function getUsers(){
 	$userRepository = $em->getRepository('utilisateur');
 	$user = $userRepository->findAll();
 	
-	if ($user == false){
-		echo 'Erreur sql';
-	}
 	return $user; 
 }
 }

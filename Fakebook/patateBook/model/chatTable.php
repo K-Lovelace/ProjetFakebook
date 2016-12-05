@@ -20,10 +20,6 @@ class chatTable {
     $chatRepository = $em->getRepository('chat');
     $lastChat = $chatRepository->findOneBy([],['id', 'DESC']);
 
-    if($lastChat == false) {
-      echo "Erreur sql";
-    }
-
     return $lastChat;
   }
 
