@@ -13,8 +13,13 @@
 
 body {
 	padding-top: 45px;
+	background-color: aquamarine;
 }
 
-* {
-	border: 1px red solid;
+header {
+	background-color: blue;
+}
+
+aside, section {
+	background-color: whitesmoke;
 }
