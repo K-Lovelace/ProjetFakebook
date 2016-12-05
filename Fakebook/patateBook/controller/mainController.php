@@ -8,7 +8,7 @@
 class mainController{
   public static function index($request,$context){
     //Tester si user connecté -> login ou index
-    if ($context->getSessionAttribute('user') == false)
+    if ($context->getSessionAttribute("currentUser") == false)
       return context::ERROR;
     return context::SUCCESS;
   }
@@ -36,9 +36,9 @@ class mainController{
  // @Author=PierreRudelou
 	public static function login($request, $context){ 
 	    if ($context->getSessionAttribute("currentUser") == false){
-	    	if(isset($_POST['user'])) 
+	    	if(isset($request['user'])) 
         {
-          $user = utilisateurTable::getUserByLoginAndPass($_POST['user']['name'], $_POST['user']['password']);
+          $user = utilisateurTable::getUserByLoginAndPass($request['user']['name'], $request['user']['password']);
           if($user == false) {
             $context->notif = "Erreur: User does not exist";
             return context::ERROR;
@@ -58,5 +58,41 @@ class mainController{
 		return context::SUCCESS;
 
 	}
+
+  // author = Gael Cuminal
+  public static function logout($request, $context)
+  {
+    if($context->getSessionAttribute("currentUser") != false) {
+      $context->setSessionAttribute("currentUser", false);
+      $context->notif = "User was successfully logout";
+      return context::SUCCESS;
+    }
+  }
+
+  // author = Gael Cuminal
+  public static function profile($request, $context)
+  {
+    if($context->getSessionAttribute("currentUser") == false) {
+      //User not signed in
+      $context->notif = "You are not signed in!";
+      return $context::ERROR;
+    }
+
+    if(is_set($request["user"])) {
+      //A user was passed through parameters
+      $user = utilisateurTable::getUserById($request["user"]);
+      if($user == false) {
+        $context->notif = "User was not found";
+        return $context::ERROR;
+      }
+    }
+
+    else {
+      //Print current user's profile
+      $user = $context->getSessionAttribute('currentUser');
+    }
+
+    return $context::SUCCESS;
+  }
 }
 ?>
