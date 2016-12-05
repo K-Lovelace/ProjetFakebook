@@ -1,5 +1,22 @@
-<!-- @author = Gael CUminal -->
+<!-- @author = Pierre Rudelou -->
 <?php $post = postTable::getPostById($message->post) ?>
 <?php $emetteur = utilisateurTable::getUserById($message->emetteur) ?>
 <?php $parent = utilisateurTable::getUserById($message->parent) ?>
-<?= $post->texte ?> par <?= $emetteur->identifiant ?> à destination de $dest->identifiant (le parent étant : <?= $parent->identifiant ?>)
+<?php $destinataire = utilisateurTable::getUserById($message->destinataire) ?>
+
+<?php
+	if ($destinataire != false){
+		?>
+			<br>
+			A :
+			<?= $destinataire->nom ?> <?= $destinataire->prenom ?>
+			<?php
+	}
+?>
+
+<?php
+?>
+<br>
+<?= $post->texte ?>
+<br>
+<br>
