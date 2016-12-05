@@ -13,13 +13,17 @@
 
 body {
 	padding-top: 45px;
-	background-color: aquamarine;
+	background-color: #DFDCE3;
 }
 
 header {
-	background-color: blue;
+	background-color: #F7B733;
+}
+
+header a {
+	color: #FC4A1A;
 }
 
 aside, section {
-	background-color: whitesmoke;
+	background-color: #4ABDAC;
 }
