@@ -8,6 +8,8 @@
 class mainController{
   public static function index($request,$context){
     //Tester si user connecté -> login ou index
+    if ($context->getSessionAttribute('user') == false)
+      return context::ERROR;
     return context::SUCCESS;
   }
 
