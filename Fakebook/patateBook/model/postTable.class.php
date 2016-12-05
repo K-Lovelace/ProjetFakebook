@@ -16,5 +16,18 @@ public static function getPostById($id)
 	}
 	return $post; 
 }
+
+public static function getPosts(){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$postRepository = $em->getRepository('post');
+	$post = $postRepository->findAll();
+	
+	if ($post == false){
+		echo 'Erreur sql';
+	}
+	return $post; 
+}
+
 }
 ?>
