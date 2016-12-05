@@ -18,3 +18,5 @@
 ?>
 <br>
 <?= $post->texte ?>
+<br>
+<br>
