@@ -14,13 +14,13 @@
 	<div class="notif-msg <?php if($context->notif != false) {echo 'in';} ?>"><?php echo $context->notif; ?></div>
 		<div class="container">
 			<div class="row">
-				<header class="col-xs-12">Ceci est le header</header>
+				<header class="col-xs-12"><?php include $header_view ?></header>
 				<aside class="col-md-3 hidden-md-down">
-					Ici la liste utilisateurs
+					<?php include $left_view ?>
 					<button data-target="#chat" data-toggle="modal">avec un lien vers le modal de chat</button>
 				</aside>
 				<section class="col-xs-12 col-md-6">
-					Ici le contenu de la page
+					<?php include $action_view ?>
 				</section>
 			</div>
 	</div>

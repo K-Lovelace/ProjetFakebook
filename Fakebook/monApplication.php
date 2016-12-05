@@ -32,7 +32,10 @@ if($view===false){
 
 //inclusion du layout qui va lui meme inclure le template view
 if($view!=context::NONE){
-	$template_view=$nameApp."/view/".$action."/".$view.".php";
+	$left_view = ($context->left_view ? $context->left_view : $nameApp."/view/default/left_view.php");
+	$header_view = ($context->header_view ? $context->header_view : $nameApp."/view/default/header_view.php");
+	$action_view=$nameApp."/view/".$action."/".$view.".php";
+
 	include($nameApp."/view/".$context->getLayout().".php");
 }
 
