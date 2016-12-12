@@ -44,8 +44,9 @@ class messageTable {
     		'destinataire' => $id,
     		'emetteur' => $id
     	]
-	);
-
+    );
+  
+    return $messages;
 	}
 
 }
