@@ -44,6 +44,11 @@ class utilisateur{
 	{
 		return $this->date_de_naissance;
 	}
+
+	public function getStatut()
+	{
+		return strip_tags(filter_var($this->statut, FILTER_SANITIZE_STRING));
+	}
 	
 }
 

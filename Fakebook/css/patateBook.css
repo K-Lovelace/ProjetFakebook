@@ -1,3 +1,6 @@
+
+@import 'chat.css';
+
 .notif-msg.in {
 	position: absolute;
 	top: 0;
@@ -32,22 +35,6 @@ header a:hover {
 #content {
 	background-color: #a8b9b6;
 	border-radius: 5px;
-}
-
-.chat .out-msg {
-	background-color: #543210;
-}
-
-.chat .in-msg {
-	background-color: #012345;
-}
-
-.chat-count {
-	position: relative;
-	top: -10px;
-	font-size: small;
-	color:white;
-	background-color: red;
 }
 
 .thumbnail {
@@ -88,4 +75,3 @@ header a:hover {
 	border-radius:10px;
 	padding: 5px;
 }
-

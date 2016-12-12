@@ -1,3 +1,4 @@
+<!-- @author = Gael Cuminal -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,7 +18,6 @@
 	<script src="js/start.js"></script>
 </head>
 <body>
-<!-- @author = Gael Cuminal -->
 	<div class="notif-msg <?php if($context->notif != false) {echo 'in';} ?>"><?php echo $context->notif; ?></div>
 		<div class="container">
 			<div class="row" id="content">
