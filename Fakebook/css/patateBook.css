@@ -27,3 +27,19 @@ header a {
 #content {
 	background-color: #4ABDAC;
 }
+
+.chat .out-msg {
+	background-color: #543210;
+}
+
+.chat .in-msg {
+	background-color: #012345;
+}
+
+.chat-count {
+	position: relative;
+	top: -10px;
+	font-size: small;
+	color:white;
+	background-color: red;
+}
