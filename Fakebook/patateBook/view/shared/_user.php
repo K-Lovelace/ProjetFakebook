@@ -5,7 +5,7 @@
     	<?php } 
 
     	else{ ?>
-    		<img class='img-rounded width='20%' height='20%' src='images/jpp.jpg'>
+    		<img class='img-rounded' width='20%' height='20%' src='images/jpp.jpg'>
     	<?php } ?>
 
 			<?= $user->nom ?> <?= $user->prenom ?>
