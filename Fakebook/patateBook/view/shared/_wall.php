@@ -1,4 +1,4 @@
-<!-- @author = Gael Cuminal -->
+<!-- @author = Pierre Rudelou -->
 <?php
 foreach (messageTable::getAllUserMessages($user->id) as $message){
 	$user = $message->emetteur;
