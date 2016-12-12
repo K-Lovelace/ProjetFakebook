@@ -94,5 +94,31 @@ class mainController{
 
     return $context::SUCCESS;
   }
+
+    // author = Pierre Rudelou
+  public static function wall($request, $context)
+  {
+    if($context->getSessionAttribute("currentUser") == false) {
+      //User not signed in
+      $context->notif = "You are not signed in!";
+      return $context::ERROR;
+    }
+
+    if(isset($request["user"])) {
+      //A user was passed through parameters
+      $user = utilisateurTable::getUserById($request["user"]);
+      if($user == false) {
+        $context->notif = "User was not found";
+        return $context::ERROR;
+      }
+    }
+
+    else {
+      //Print current user's profile
+      $user = $context->getSessionAttribute('currentUser');
+    }
+
+    return $context::SUCCESS;
+  }
 }
 ?>

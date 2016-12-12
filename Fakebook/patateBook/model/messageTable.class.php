@@ -13,7 +13,11 @@ class messageTable {
     $em = dbconnection::getInstance()->getEntityManager() ;
     $messageRepository = $em->getRepository('message');
 
-    $messages = $messageRepository->findBy(['destinataire' => $id]);
+    $messages = $messageRepository->findBy(
+    	[
+    		'destinataire' => $id,
+    	]
+	);
 
     return $messages;
   }
@@ -28,7 +32,21 @@ class messageTable {
 		echo 'Erreur sql';
 	}
 	return $message; 
-}
+	}
+
+	public static function getAllUserMessages($id){
+
+    $em = dbconnection::getInstance()->getEntityManager() ;
+    $messageRepository = $em->getRepository('message');
+
+    $messages = $messageRepository->findBy(
+    	[
+    		'destinataire' => $id,
+    		'emetteur' => $id
+    	]
+	);
+
+	}
 
 }
 
