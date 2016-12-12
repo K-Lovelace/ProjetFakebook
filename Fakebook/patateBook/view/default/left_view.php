@@ -4,6 +4,7 @@
 	<?php $user = $context->getSessionAttribute("currentUser") ?>
 	<?php if($user != false) { ?>
 		<div class="user-profile col-xs-12">
+			<?php $user_class = 'thumbnail-perso'?>
 			<?php include ($nameApp."/view/shared/_user.php") ?>
 		</div>
 	<?php } ?>

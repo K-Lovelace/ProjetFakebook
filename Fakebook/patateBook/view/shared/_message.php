@@ -9,7 +9,7 @@
 		?>
 			<br>
 			A :
-			<?= $destinataire->nom ?> <?= $destinataire->prenom ?> > 
+			<?= $destinataire->nom ?> <?= $destinataire->prenom ?> 
 			<?php
 	}
 ?>

@@ -56,12 +56,13 @@ header a:hover {
 }
 
 .thumbnail-small {
-	width : 75px;
-	height : 75px;
+	width : 50px;
+	height : 50px;
 }
 
-.wall {
-
+.thumbnail-perso {
+	width : 75px;
+	height : 75px;
 }
 
 .current_user_profile {
@@ -72,6 +73,8 @@ header a:hover {
 	background-color: white;
 	margin-bottom: 20px;
 	margin-top: 20px;
+	margin-right: 10px;
+
 }
 
 .message{
@@ -81,6 +84,7 @@ header a:hover {
 	border-width: 1px ;
 	margin-bottom: 20px;
 	margin-top: 20px;
+	margin-right: 10px;
 	border-radius:10px;
 	padding: 5px;
 }
