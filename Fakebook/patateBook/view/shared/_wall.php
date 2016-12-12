@@ -1,3 +1,4 @@
+<!-- @author = Gael Cuminal -->
 <?php
 foreach (messageTable::getAllUserMessages($user->id) as $message){
 	$user = $message->emetteur;
