@@ -9,10 +9,18 @@ class mainController{
   public static function index($request,$context){
     //Tester si user connecté -> login ou index
     if ($context->getSessionAttribute("currentUser") == false){
+      $context->left_view = 'view/index/_error_left_view.php';
       return context::ERROR;
     }
     return context::SUCCESS;
   }
+
+  //author=Gael Cuminal
+  //affiche le formulaire de création de compte
+  public static function newUser($request, $context){
+    return context::SUCCESS;
+  }
+
 
  // @Author=PierreRudelou
 	public static function login($request, $context){ 

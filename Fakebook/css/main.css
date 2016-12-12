@@ -40,6 +40,7 @@ aside {
 #content {
 	background-color: #a8b9b6;
 	border-radius: 5px;
+	min-height: 60vh;
 }
 
 .thumbnail {

@@ -14,7 +14,9 @@ $(document).ready(function () {
 	   minWidth: 300
 	});
 
-	$('.modal-dialog').draggable();
+	$('.modal-dialog').draggable({
+		parent: '#chat'
+	});
 
 	$('#chat').on('show.bs.modal', function () {
 	   $(this).find('.modal-body').css({
