@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>PatateBook</title>
+	<title>FakeBook</title>
 	<meta charset="utf-8">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css"></script>
-	<link rel="stylesheet" type="text/css" href="css/<?php echo $nameApp; ?>.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

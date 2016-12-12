@@ -7,8 +7,8 @@
 		<div class="message">
 		<?php
 		$user = $message->emetteur;
-	 	include ($nameApp."/view/shared/_user.php"); 
-	 	include ($nameApp."/view/shared/_message.php"); 
+	 	include ("view/shared/_user.php"); 
+	 	include ("view/shared/_message.php"); 
 	 	?>
 	 	</div> 
 	 	<?php

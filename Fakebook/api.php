@@ -3,11 +3,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 //nom de l'application
-$nameApp = "patateBook";
+$nameApp = "fakeBook";
 
 // Inclusion des classes et librairies
 require_once 'lib/core.php';
-require_once 'api/controller/mainController.php';
+require_once 'controller/apiController.php';
 
 
 //action par défaut
@@ -30,7 +30,7 @@ if($view===false){
 }
 
 if($view!=context::NONE){
-	$template_view="api/view/".$action."/".$view.".php";
+	$template_view="view/".$action."/".$view.".php";
 	include($template_view);
 }
 

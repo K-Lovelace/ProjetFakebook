@@ -3,11 +3,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'on');
 
 //nom de l'application
-$nameApp = "patateBook";
+$nameApp = "fakeBook";
 
 // Inclusion des classes et librairies
 require_once 'lib/core.php';
-require_once $nameApp.'/controller/mainController.php';
+require_once 'controller/mainController.php';
 
 
 //action par défaut
@@ -32,11 +32,11 @@ if($view===false){
 
 //inclusion du layout qui va lui meme inclure le template view
 if($view!=context::NONE){
-	$left_view = ($context->left_view ? $context->left_view : $nameApp."/view/default/left_view.php");
-	$header_view = ($context->header_view ? $context->header_view : $nameApp."/view/default/header_view.php");
-	$action_view=$nameApp."/view/".$action."/".$view.".php";
+	$left_view = ($context->left_view ? $context->left_view : "view/default/left_view.php");
+	$header_view = ($context->header_view ? $context->header_view : "view/default/header_view.php");
+	$action_view="view/".$action."/".$view.".php";
 
-	include($nameApp."/view/".$context->getLayout().".php");
+	include("view/".$context->getLayout().".php");
 }
 
 ?>
