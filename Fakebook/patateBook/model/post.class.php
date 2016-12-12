@@ -30,6 +30,11 @@ class post{
 	{
 		return $this->date->format('Y-m-d H:i:s');
 	}
+
+	public function getTexte()
+	{
+		return strip_tags(filter_var($this->texte, FILTER_SANITIZE_STRING));
+	}
 }
 
 ?>
