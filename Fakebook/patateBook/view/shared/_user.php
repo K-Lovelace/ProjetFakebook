@@ -8,7 +8,7 @@
     		<img class='img-rounded' width='20%' height='20%' src='images/jpp.jpg'>
     	<?php } ?>
 
-			<?= $user->nom ?> <?= $user->prenom ?>
+			<a href="?action=profile&user=<?= $user->id ?>"> <?= $user->nom ?> <?= $user->prenom ?> </a>
 		<br>
 		<?= $user->statut ?>
 </div>
