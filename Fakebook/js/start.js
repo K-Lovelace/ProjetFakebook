@@ -16,7 +16,7 @@ $(document).ready(function () {
 	});
 	$('.modal-dialog').draggable();
 
-	$('#myModal').on('show.bs.modal', function () {
+	$('#chat').on('show.bs.modal', function () {
 	   $(this).find('.modal-body').css({
 	       'max-height':'100%'
 	   });

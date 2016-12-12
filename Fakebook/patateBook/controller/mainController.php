@@ -89,7 +89,7 @@ class mainController{
 
     else {
       //Print current user's profile
-      $user = $context->getSessionAttribute('currentUser');
+      $context->user = $context->getSessionAttribute('currentUser');
     }
 
     return $context::SUCCESS;
