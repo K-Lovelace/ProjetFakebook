@@ -46,7 +46,7 @@
 			<div class="modal-footer">
 		   		<form>
 			   		<input type="text" name="text" placeholder="Votre message...">
-			   		<button type="button" class="btn btn-primary">Save changes</button>
+			   		<button type="button" class="btn btn-primary">Envoyer</button>
 		   		</form>
 		 	</div>
 		</div><!-- /.modal-content -->
