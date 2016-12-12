@@ -66,7 +66,18 @@ aside {
 	margin-bottom: 20px;
 	margin-top: 20px;
 	margin-right: 10px;
+}
 
+.current_user_identity_panel{
+	border-style: solid;
+	border-width: 1px ;
+	border-radius:10px;
+
+	background-color: white;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .message{
