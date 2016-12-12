@@ -17,15 +17,21 @@ body {
 }
 
 header {
-	background-color: #F7B733;
+	background-color: #254E71;
+	border-radius: 5px;
 }
 
 header a {
-	color: #FC4A1A;
+	color: white;
+}
+
+header a:hover {
+	color: silver;
 }
 
 #content {
-	background-color: #4ABDAC;
+	background-color: #a8b9b6;
+	border-radius: 5px;
 }
 
 .chat .out-msg {
@@ -43,3 +49,39 @@ header a {
 	color:white;
 	background-color: red;
 }
+
+.thumbnail {
+	width : 200px;
+	height : 200px;
+}
+
+.thumbnail-small {
+	width : 75px;
+	height : 75px;
+}
+
+.wall {
+
+}
+
+.current_user_profile {
+	border-style: solid;
+	border-width: 1px ;
+	border-radius:10px;
+
+	background-color: white;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.message{
+	background-color: white;
+
+	border-style: solid;
+	border-width: 1px ;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	border-radius:10px;
+	padding: 5px;
+}
+
