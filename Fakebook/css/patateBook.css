@@ -32,6 +32,11 @@ header a:hover {
 	color: silver;
 }
 
+aside {
+	max-height: 90vh;
+	overflow-y: auto;
+}
+
 #content {
 	background-color: #a8b9b6;
 	border-radius: 5px;

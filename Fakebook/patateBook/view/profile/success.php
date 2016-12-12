@@ -6,6 +6,11 @@
 		<?php include $nameApp.'/view/shared/_user.php'; ?>
 		<?php $user_class = NULL?>
 	</div>
+	<div class="col-xs-12 ">
+		<h2>Ecrire à <?= $user->identifiant ?></h2>
+		<input type="text" name="message">
+		<button class="btn-lg btn-default">Envoyer</button>
+	</div>
 	<div class="col-xs-12 wall">
 		<?php include $nameApp.'/view/shared/_wall.php'; ?>		
 	</div>
