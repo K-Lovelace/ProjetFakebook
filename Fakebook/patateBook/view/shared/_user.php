@@ -11,5 +11,5 @@
 
 			<a href="?action=profile&user=<?= $user->id ?>"> <?= $user->nom ?> <?= $user->prenom ?> </a>
 		<br>
-		<?= $user->statut ?>
+		<?= $user->getStatut() ?>
 </div>

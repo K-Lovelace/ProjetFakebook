@@ -17,7 +17,7 @@
 <?php
 ?>
 <br>
-<?= $post->texte ?>
+<?= $post->getTexte() ?>
 <br>
 <br>
 
