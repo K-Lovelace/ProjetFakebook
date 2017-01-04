@@ -26,7 +26,6 @@
 <?php } ?>
 <div class="container">
     <div class="row" id="content">
-        BITE
         <header class="col-xs-12"><?php include $header_view; ?></header>
         <aside class="col-md-3 hidden-md-down">
             <?php include $left_view; ?>
