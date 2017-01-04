@@ -28,7 +28,7 @@
     <div class="row" id="content">
         <header class="col-xs-12"><?php include $header_view; ?></header>
         <aside class="col-md-3 hidden-md-down">
-            <?php include $left_view; ?>
+            <?php if($left_view) include $left_view; ?>
         </aside>
         <section class="col-xs-12 col-md-9">
             <?php include $action_view; ?>
