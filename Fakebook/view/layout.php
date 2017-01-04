@@ -18,17 +18,20 @@
 	<script src="js/start.js"></script>
 </head>
 <body>
-	<div class="notif-msg <?php if($context->notif != false) {echo 'in';} ?>"><?php echo $context->notif; ?></div>
-		<div class="container">
-			<div class="row" id="content">
-				<header class="col-xs-12"><?php include $header_view; ?></header>
-				<aside class="col-md-3 hidden-md-down">
-					<?php include $left_view; ?>
-				</aside>
-				<section class="col-xs-12 col-md-9">
-					<?php include $action_view; ?>
-				</section>
-			</div>
+	<div class="notif-msg <?php if($context->notif != false) {echo 'in';} ?>">
+		<?php echo $context->notif; ?>
+				
+	</div>
+	<div class="container">
+		<div class="row" id="content">
+			<header class="col-xs-12"><?php include $header_view; ?></header>
+			<aside class="col-md-3 hidden-md-down">
+				<?php if ($left_view != 'empty') include $left_view; ?>
+			</aside>
+			<section class="col-xs-12 col-md-9">
+				<?php include $action_view; ?>
+			</section>
+		</div>
 	</div>
 
 	<div class="modal" id="chat" data-backdrop="static">
