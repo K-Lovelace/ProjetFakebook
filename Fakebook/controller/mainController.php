@@ -6,10 +6,11 @@
  */
 
 class mainController{
+  //author = Gael Cuminal
   public static function index($request,$context){
     //Tester si user connecté -> login ou index
     if ($context->getSessionAttribute("currentUser") == false){
-      $context->left_view = 'view/index/_error_left_view.php';
+      $context->left_view = 'empty';
       return context::ERROR;
     }
     return context::SUCCESS;
@@ -18,18 +19,21 @@ class mainController{
   //author=Gael Cuminal
   //affiche le formulaire de création de compte
   public static function newUser($request, $context){
+    $context->left_view = 'empty';
     return context::SUCCESS;
   }
 
 
  // @Author=PierreRudelou
-	public static function login($request, $context){ 
+	public static function login($request, $context){
+    global $action;
     if ($context->getSessionAttribute("currentUser") == false){
-    	if(isset($request['user'])) 
+      if(isset($request['user'])) 
       {
         $user = utilisateurTable::getUserByLoginAndPass($request['user']['name'], $request['user']['password']);
         if($user == false) {
           $context->notif = "Erreur: User does not exist";
+          $context->left_view = 'empty';
           return context::ERROR;
         }
 				$context->setSessionAttribute("currentUser", $user);
@@ -37,13 +41,14 @@ class mainController{
       }		
 
   		else{
+        $context->left_view = 'empty';
   			return context::ERROR;
   		}
 		}
     else {
       $context->notif = "Already signed in";
     }
-
+    $action = 'index';
 		return context::SUCCESS;
 	}
 
