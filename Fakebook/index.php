@@ -32,8 +32,8 @@ if($view===false){
 
 //inclusion du layout qui va lui meme inclure le template view
 if($view!=context::NONE){
-	$left_view = false === $context->left_view || null === $context->left_view ? "view/default/left_view.php" : $context->left_view;
-    $header_view = false === $context->header_view || null === $context->header_view ? "view/default/header_view.php" : $context->header_view;
+	$left_view = null === $context->left_view ? "view/default/left_view.php" : $context->left_view;
+    $header_view = null === $context->header_view ? "view/default/header_view.php" : $context->header_view;
 	$action_view="view/".$action."/".$view.".php";
 
 	include("view/".$context->getLayout().".php");
