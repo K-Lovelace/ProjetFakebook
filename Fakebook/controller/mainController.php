@@ -9,8 +9,8 @@ class mainController{
   //author = Gael Cuminal
   public static function index($request,$context){
     //Tester si user connecté -> login ou index
-    if ($context->getSessionAttribute("currentUser") == false){
-      $context->left_view = 'empty';
+    if ($context->getSessionAttribute("currentUser") === false){
+      $context->left_view = false;
       return context::ERROR;
     }
     return context::SUCCESS;
@@ -27,7 +27,7 @@ class mainController{
  // @Author= Pierre Rudelou
 	public static function login($request, $context){
     global $action;
-    if ($context->getSessionAttribute("currentUser") == false){
+    if ($context->getSessionAttribute("currentUser") === false){
       if(isset($request['user'])) 
       {
         $user = utilisateurTable::getUserByLoginAndPass($request['user']['name'], $request['user']['password']);
@@ -54,7 +54,7 @@ class mainController{
 
   // author = Gael Cuminal
   public static function logout($request, $context) {
-    if($context->getSessionAttribute("currentUser") != false) {
+    if($context->getSessionAttribute("currentUser") !== false) {
       $context->setSessionAttribute("currentUser", false);
       $context->notif = "User was successfully logout";
       return context::SUCCESS;
@@ -63,7 +63,7 @@ class mainController{
 
   // author = Gael Cuminal
   public static function profile($request, $context) {
-    if($context->getSessionAttribute("currentUser") == false) {
+    if($context->getSessionAttribute("currentUser") === false) {
       //User not signed in
       $context->notif = "You are not signed in!";
       return $context::ERROR;
