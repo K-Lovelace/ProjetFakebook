@@ -26,5 +26,14 @@ public static function getPosts(){
 	return $post; 
 }
 
+public static function save($post){
+
+$em = dbconnection::getInstance()->getEntityManager() ;
+
+$em->persist($post); //$em is an instance of EntityManager
+$em->flush();
+
+}
+
 }
 ?>

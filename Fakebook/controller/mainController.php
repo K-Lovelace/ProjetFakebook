@@ -23,8 +23,8 @@ class mainController{
     return context::SUCCESS;
   }
 
-
- // @Author=PierreRudelou
+ 
+ // @Author= Pierre Rudelou
 	public static function login($request, $context){
     global $action;
     if ($context->getSessionAttribute("currentUser") == false){
@@ -85,6 +85,49 @@ class mainController{
 
     $context->user = $user;
     return $context::SUCCESS;
+  }
+
+ // @Author= Pierre Rudelou
+  public static function sendmessage($request, $context){
+
+    if($context->getSessionAttribute("currentUser") == false) {
+      //User not signed in
+      $context->notif = "You are not signed in!";
+      return $context::ERROR;
+    }
+
+    else {
+      //Print current user's profile
+      $expediteur = $context->getSessionAttribute('currentUser');
+
+
+      $destinataire = $request['message']['from'];
+      $texte= $request['message']['texte'];
+
+      var_dump($expediteur);
+      var_dump($destinataire);
+      var_dump($texte);
+
+
+      $post = new post();
+      $post->texte = $texte;
+      $post->date  = date_create(date('Y-m-d H:i:s')); 
+
+      postTable::save($post);
+
+      // toDo image
+
+      $message = new message();
+      $message->emetteur = utilisateurTable::getUserByIdentifiant($expediteur);
+      $message->destinataire = utilisateurTable::getUserByIdentifiant($destinataire);
+      $message->post = $post;
+
+      messageTable::save($message);
+
+    }
+
+    return $context::SUCCESS;
+
   }
 }
 ?>

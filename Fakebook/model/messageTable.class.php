@@ -44,6 +44,15 @@ class messageTable {
     return $messages;
 	}
 
+	public static function save($message){
+
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$em->persist($message); //$em is an instance of EntityManager
+	$em->flush();
+
+	}
+
 }
 
 ?>

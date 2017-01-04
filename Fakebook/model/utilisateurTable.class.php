@@ -34,5 +34,14 @@ class utilisateurTable {
 		$users = $userRepository->findAll();
 		return $users; 
 	}
+
+	// @Author=PierreRudelou
+	public static function getUserByIdentifiant($identifiant){
+		$em = dbconnection::getInstance()->getEntityManager() ;
+
+		$userRepository = $em->getRepository('utilisateur');
+		$user = $userRepository->findOneBy(['identifiant' => $identifiant]);	
+		return $user; 
+	}
 }
 ?>

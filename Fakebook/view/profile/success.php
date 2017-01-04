@@ -8,8 +8,13 @@
 	</div>
 	<div class="col-xs-12 ">
 		<h2>Ecrire à <?= $user->identifiant ?></h2>
-		<input type="text" name="message">
-		<button class="btn-lg btn-default">Envoyer</button>
+
+		<form method="post" action="index.php?action=sendmessage">
+			<input type="text" name="message[texte]">
+			<input type = "hidden" name="message[from]" value="<?= $user->identifiant; ?>" >
+			<button type='submit' class="btn-lg btn-default">Envoyer</button>
+		</form>
+
 	</div>
 	<div class="col-xs-12 wall">
 		<?php include 'view/shared/_wall.php'; ?>		
