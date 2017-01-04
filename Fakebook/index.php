@@ -32,7 +32,7 @@ if($view===false){
 
 //inclusion du layout qui va lui meme inclure le template view
 if($view!=context::NONE){
-	$left_view = $context->left_view ? $context->left_view : "view/default/left_view.php";
+	$left_view = null !== $context->left_view || false !== $context->left_view ? $context->left_view : "view/default/left_view.php";
 	$header_view = $context->header_view ? $context->header_view : "view/default/header_view.php";
 	$action_view="view/".$action."/".$view.".php";
 
