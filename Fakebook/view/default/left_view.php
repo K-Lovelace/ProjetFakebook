@@ -1,7 +1,7 @@
 <!-- @author = Pierre Rudelou -->
 
 <div class="row">
-	<?php $user = $context->getSessionAttribute("currentUser") ?>
+	<?php $user = utilisateurTable::getUserById($context->getSessionAttribute("currentUser"))?>
 	<?php if($user != false) { ?>
 		<div class="col-xs-12 current_user_identity_panel ">
 			<?php $user_class = 'thumbnail-perso'?>

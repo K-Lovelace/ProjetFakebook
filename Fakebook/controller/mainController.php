@@ -98,7 +98,7 @@ class mainController{
 
     else {
       //Print current user's profile
-      $expediteur = utilisateurTable::getUserByIdentifiant($context->getSessionAttribute('currentUser')->);
+      $expediteur = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
 
       $destinataire = $request['message']['to'];
       $texte= $request['message']['texte'];
@@ -116,7 +116,6 @@ class mainController{
       $message->destinataire = utilisateurTable::getUserByIdentifiant($destinataire);
       $message->post = $post;
 
-      var_dump($message->emetteur);
       messageTable::save($message);
 
     }

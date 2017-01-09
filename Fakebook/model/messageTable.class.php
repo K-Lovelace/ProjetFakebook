@@ -39,9 +39,8 @@ class messageTable {
     $em = dbconnection::getInstance()->getEntityManager() ;
     $messageRepository = $em->getRepository('message');
 
-    $messages = array_merge ( $messageRepository->findBy(['destinataire' => $id]), $messageRepository->findBy(['emetteur' => $id]));
+    return $messageRepository->findBy(['destinataire' => $id]);
 	  
-    return $messages;
 	}
 
 	public static function save($message){
