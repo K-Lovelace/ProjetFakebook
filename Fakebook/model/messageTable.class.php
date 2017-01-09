@@ -52,8 +52,6 @@ class messageTable {
 	$em->persist($message); //$em is an instance of EntityManager
 	$em->flush();
 
-	var_dump($message);
-
 	}
 
 }

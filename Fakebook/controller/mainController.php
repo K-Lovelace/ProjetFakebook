@@ -91,6 +91,8 @@ class mainController{
  // @Author= Pierre Rudelou
   public static function sendmessage($request, $context){
 
+    global $action;
+
     if($context->getSessionAttribute("currentUser") == false) {
       //User not signed in
       $context->notif = "You are not signed in!";
@@ -119,9 +121,11 @@ class mainController{
 
       messageTable::save($message);
 
-    }
 
-    return $context::SUCCESS;
+    }
+    $action ='profile';
+    $request['user']=$message->destinataire;
+    return $context->executeAction($action,$request);
 
   }
 }

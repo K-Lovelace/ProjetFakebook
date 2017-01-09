@@ -9,7 +9,9 @@
 		?>
 			<br>
 			A :
-			<?= $destinataire->nom ?> <?= $destinataire->prenom ?> 
+			<a href="?action=profile&user=<?= $destinataire->id ?>"> 
+				<?= $destinataire->nom ?> <?= $destinataire->prenom ?> 
+			</a>
 			<?php
 	}
 ?>
@@ -17,7 +19,10 @@
 <?php
 ?>
 <br>
+<?php if ($post != NULL && $post->getTexte() != NULL && $post->getTexte() != ''){ ?>
 <?= $post->getTexte() ?>
+<?php } ?>
+
 <br>
 <br>
 
