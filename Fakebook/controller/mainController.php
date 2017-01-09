@@ -26,7 +26,7 @@ class mainController{
  
  // @Author= Pierre Rudelou
 	public static function login($request, $context){
-    global $action;
+    global $action; // to redirect
     if ($context->getSessionAttribute("currentUser") === false){
       if(isset($request['user'])) 
       {
@@ -48,8 +48,9 @@ class mainController{
     else {
       $context->notif = "Already signed in";
     }
+
     $action = 'index';
-		return context::SUCCESS;
+		return $context->executeAction($action, $request);
 	}
 
   // author = Gael Cuminal
