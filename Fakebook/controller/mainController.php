@@ -126,8 +126,6 @@ class mainController{
     $request['user']=$message->destinataire;
     return $context->executeAction($action,$request);
 
-
-
   }
 }
 ?>
