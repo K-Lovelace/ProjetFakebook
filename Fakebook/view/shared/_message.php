@@ -19,7 +19,10 @@
 <?php
 ?>
 <br>
+<?php if ($post != NULL && $post->getTexte() != NULL && $post->getTexte() != ''){ ?>
 <?= $post->getTexte() ?>
+<?php } ?>
+
 <br>
 <br>
 
