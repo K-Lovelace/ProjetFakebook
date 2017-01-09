@@ -13,13 +13,13 @@ require_once 'controller/mainController.php';
 //action par défaut
 $action = "index";
 
-if(key_exists("action", $_REQUEST))
-	$action =  $_REQUEST['action'];
 
 session_start();
 
 $context = context::getInstance();
 $context->init($nameApp);
+if($context->getSessionAttribute("currentUser") === false && key_exists("action", $_REQUEST))
+	$action =  $_REQUEST['action'];
 
 $view=$context->executeAction($action, $_REQUEST);
 
