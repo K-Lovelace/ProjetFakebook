@@ -33,15 +33,15 @@ class mainController{
         $user = utilisateurTable::getUserByLoginAndPass($request['user']['name'], $request['user']['password']);
         if($user == false) {
           $context->notif = "Erreur: User does not exist";
-          $context->left_view = 'empty';
+          $context->left_view = false;
           return context::ERROR;
         }
-				$context->setSessionAttribute("currentUser", $user);
-        $context->notif = "Bonjour ".$context->getSessionAttribute("currentUser")->nom."!";
+				$context->setSessionAttribute("currentUser", $user->id);
+        $context->notif = "Bonjour ".$user->nom."!";
       }		
 
   		else{
-        $context->left_view = 'empty';
+        $context->left_view = false;
   			return context::ERROR;
   		}
 		}
@@ -80,7 +80,7 @@ class mainController{
 
     else {
       //Print current user's profile
-      $user = $context->getSessionAttribute('currentUser');
+      $user = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
     }
 
     $context->user = $user;

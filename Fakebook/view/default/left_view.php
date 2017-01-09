@@ -9,7 +9,7 @@
 			<?php $user_class = NULL?>
 		</div>
 
-		<center>Friend List</center>
+		<div class="text-xs-center col-xs-12">Friend List</div>
 
 	<?php } ?>
 		<?php foreach (utilisateurTable::getUsers() as $user) {?>
