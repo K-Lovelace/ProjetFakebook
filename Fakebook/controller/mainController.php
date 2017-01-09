@@ -33,7 +33,7 @@ class mainController{
         $user = utilisateurTable::getUserByLoginAndPass($request['user']['name'], $request['user']['password']);
         if($user == false) {
           $context->notif = "Erreur: User does not exist";
-          $context->left_view = 'empty';
+          $context->left_view = false;
           return context::ERROR;
         }
 				$context->setSessionAttribute("currentUser", $user);
@@ -41,7 +41,7 @@ class mainController{
       }		
 
   		else{
-        $context->left_view = 'empty';
+        $context->left_view = false;
   			return context::ERROR;
   		}
 		}
