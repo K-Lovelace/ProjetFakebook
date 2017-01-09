@@ -98,16 +98,10 @@ class mainController{
 
     else {
       //Print current user's profile
-      $expediteur = $context->getSessionAttribute('currentUser');
+      $expediteur = utilisateurTable::getUserByIdentifiant($context->getSessionAttribute('currentUser')->);
 
-
-      $destinataire = $request['message']['from'];
+      $destinataire = $request['message']['to'];
       $texte= $request['message']['texte'];
-
-      var_dump($expediteur);
-      var_dump($destinataire);
-      var_dump($texte);
-
 
       $post = new post();
       $post->texte = $texte;
@@ -118,10 +112,11 @@ class mainController{
       // toDo image
 
       $message = new message();
-      $message->emetteur = utilisateurTable::getUserByIdentifiant($expediteur);
+      $message->emetteur = $expediteur;
       $message->destinataire = utilisateurTable::getUserByIdentifiant($destinataire);
       $message->post = $post;
 
+      var_dump($message->emetteur);
       messageTable::save($message);
 
     }

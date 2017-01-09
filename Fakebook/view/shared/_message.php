@@ -5,7 +5,7 @@
 <?php $destinataire = utilisateurTable::getUserById($message->destinataire) ?>
 
 <?php
-	if ($destinataire != false){
+	if ($destinataire != false && $destinataire != $emetteur){
 		?>
 			<br>
 			A :

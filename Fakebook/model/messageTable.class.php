@@ -48,8 +48,12 @@ class messageTable {
 
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
+
+
 	$em->persist($message); //$em is an instance of EntityManager
 	$em->flush();
+
+	var_dump($message);
 
 	}
 

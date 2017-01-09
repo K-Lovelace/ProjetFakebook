@@ -11,7 +11,7 @@
 
 		<form method="post" action="index.php?action=sendmessage">
 			<input type="text" name="message[texte]">
-			<input type = "hidden" name="message[from]" value="<?= $user->identifiant; ?>" >
+			<input type = "hidden" name="message[to]" value="<?= $user->identifiant; ?>" >
 			<button type='submit' class="btn-lg btn-default">Envoyer</button>
 		</form>
 
