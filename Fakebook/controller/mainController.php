@@ -36,8 +36,8 @@ class mainController{
           $context->left_view = false;
           return context::ERROR;
         }
-				$context->setSessionAttribute("currentUser", $user);
-        $context->notif = "Bonjour ".$context->getSessionAttribute("currentUser")->nom."!";
+				$context->setSessionAttribute("currentUser", $user->id);
+        $context->notif = "Bonjour ".$user->nom."!";
       }		
 
   		else{
@@ -80,7 +80,7 @@ class mainController{
 
     else {
       //Print current user's profile
-      $user = $context->getSessionAttribute('currentUser');
+      $user = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
     }
 
     $context->user = $user;
