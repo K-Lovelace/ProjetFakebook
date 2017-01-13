@@ -9,6 +9,7 @@
 // })
 
 $(document).ready(function () {
+    console.log('doc ready');
     $('.modal-content').resizable({
         minHeight: 300,
         minWidth: 300
