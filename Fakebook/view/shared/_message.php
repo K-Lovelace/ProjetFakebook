@@ -5,15 +5,17 @@
 <?php $destinataire = utilisateurTable::getUserById($message->destinataire) ?>
 
 <?php
-	if ($destinataire != false && $destinataire != $emetteur){
-		?>
-			<br>
-			A :
-			<a href="?action=profile&user=<?= $destinataire->id ?>"> 
-				<?= $destinataire->nom ?> <?= $destinataire->prenom ?> 
-			</a>
-			<?php
-	}
+		if ($destinataire != false && $destinataire != $emetteur){
+			?>
+				<br>
+				A :
+				<a href="?action=profile&user=<?= $destinataire->id ?>"> 
+					<?= $destinataire->nom ?> <?= $destinataire->prenom ?> 
+				</a>
+
+
+				<?php
+		}
 ?>
 
 <?php
@@ -24,6 +26,10 @@
 <?php } ?>
 
 <br>
+<br>
+
+Nombre de "j'aime" : <?= $message->aime ?>
+
 <br>
 
 
