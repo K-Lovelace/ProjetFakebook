@@ -84,16 +84,11 @@ class mainController
             }
         } else {
             //Print current user's profile
-            $user = $context->getSessionAttribute('currentUser');
+            $user = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));;
         }
 
-    else {
-      //Print current user's profile
-      $user = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
-    }
-
-    $context->user = $user;
-    return $context::SUCCESS;
+        $context->user = $user;
+        return $context::SUCCESS;
   }
 
  // @Author= Pierre Rudelou
