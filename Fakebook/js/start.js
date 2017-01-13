@@ -26,15 +26,15 @@ $(document).ready(function () {
 
     $(document).on('click', '.ajax-link', function (e) {
         e.preventDefault();
-        $('#content').html('<h1 class="align-self-center"></h1>');
+        $('#content section').html('<h1 class="align-self-center"></h1>');
 
         $.ajax({
             url: 'api.php?' + $(this).attr('href'),
             success: function (html) {
-                $('#content').html(html);
+                $('#content section').html(html);
             },
             error: function (html) {
-                $('#content').html('Something went wrong');
+                $('#content section').html('Something went wrong');
             }
         });
         return false;
