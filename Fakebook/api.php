@@ -22,7 +22,7 @@ $context = context::getInstance();
 $context->init($nameApp);
 
 $view=$context->executeAction($action, $_REQUEST);
-var_dump(mainController::profile());
+
 if($view===false){
 	$context->notif = "L'action ".$action." n'existe pas!";
 	$action = "error";
