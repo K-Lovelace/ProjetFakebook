@@ -12,7 +12,7 @@ class mainController
     public static function index($request, $context)
     {
         //Tester si user connecté -> login ou index
-        if ($context->getSessionAttribute("currentUser") === false) {
+        if ($context->getSessionAttribute("currentUser") === NULL) {
             $context->left_view = false;
             return context::ERROR;
         }
