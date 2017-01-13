@@ -26,7 +26,7 @@
 <div class="container">
     <div class="row" id="content">
         <header class="col-12"><?php include $header_view; ?></header>
-        <aside class="col-md-3 hidden-sm-down">
+        <aside class="col-12 col-md-3">
             <?php if ($left_view) include $left_view; ?>
         </aside>
         <section class="col-12 col-md-9">
