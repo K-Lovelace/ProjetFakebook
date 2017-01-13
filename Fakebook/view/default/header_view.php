@@ -1,6 +1,6 @@
 <!--Author = Gael Cuminal-->
 <nav class="nav nav-inline">
-	<a href="?action=index" class="nav-link">Accueil</a>
+	<a href="?action=index" class="nav-link ajax-link">Accueil</a>
 	<?php if(NULL !== $context->getSessionAttribute("currentUser")) {?>
 		<a href="?action=profile" class="nav-link ajax-link">Mon profil</a>
 		<a href="#" class="nav-link">Se déconnecter</a>
