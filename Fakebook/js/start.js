@@ -18,6 +18,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.ajax-link', function (e) {
         e.preventDefault();
+        console.log('loading action=', $(this).attr('href'))
         $('#content section').html('<h1 class="align-self-center"></h1>');
 
         $.ajax({
