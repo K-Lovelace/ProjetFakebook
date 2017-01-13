@@ -18,19 +18,11 @@ class mainController
         }
         return context::SUCCESS;
     }
-
-    //author=Gael Cuminal
-    //affiche le formulaire de création de compte
-    public static function newUser($request, $context)
-    {
-        $context->left_view = false;
-        return context::SUCCESS;
-    }
  
  // @Author= Pierre Rudelou
 	public static function login($request, $context){
     global $action; // to redirect
-    if ($context->getSessionAttribute("currentUser") === false){
+    if ($context->getSessionAttribute("currentUser") === NULL){
       if(isset($request['user'])) 
       {
         $user = utilisateurTable::getUserByLoginAndPass($request['user']['name'], $request['user']['password']);
