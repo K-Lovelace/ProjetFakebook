@@ -23,6 +23,7 @@ $(document).ready(function () {
 
         $.ajax({
             url: 'api.php?' + $(this).attr('href'),
+            method: 'GET',
             success: function (html) {
                 $('#content section').html(html);
             },
