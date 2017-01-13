@@ -74,14 +74,15 @@ class mainController
             $context->notif = "You are not signed in!";
             return $context::ERROR;
         }
-        $user = utilisateurTable::getUserById($request["user"]);
+
+        if(isset($request['user']))
+            $user = utilisateurTable::getUserById($request["user"]);
+        else
+            $user = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
 
         if ($user == false) {
             $context->notif = "User was not found";
-            $user = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
-            if ($user == false) {
-                return $context::ERROR;
-            }
+            return $context::ERROR;
         }
 
         $context->user = $user;
