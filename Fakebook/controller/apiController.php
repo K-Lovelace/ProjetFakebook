@@ -1,10 +1,13 @@
 <?php
 
-class mainController{
+class mainController
+{
 
-  public static function logout($request,$context) {
-    $context->setSessionAttribute('currentUser', false);
-    return context::SUCCESS;
-  }
+    public static function logout($request, $context)
+    {
+        $context->setSessionAttribute('currentUser', false);
+        return context::SUCCESS;
+    }
 }
+
 ?>
