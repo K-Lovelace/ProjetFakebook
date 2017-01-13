@@ -22,8 +22,8 @@ $(document).ready(function () {
         $('#content section').html('<h1 class="align-self-center"></h1>');
 
         $.ajax({
-            url: 'api.php?' + $(this).attr('href'),
-            method: 'GET',
+            url: 'api.php' + $(this).attr('href'),
+            type: 'GET',
             success: function (html) {
                 $('#content section').html(html);
             },

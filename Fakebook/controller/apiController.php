@@ -22,7 +22,7 @@ class mainController
             $user = utilisateurTable::getUserById($request["user"]);
         else
             $user = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
-        var_dump($user);
+        
         if ($user === false) {
             $context->notif = "User was not found";
             return $context::ERROR;
