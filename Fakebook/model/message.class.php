@@ -22,12 +22,12 @@ class message{
 	/**	
 	 * @ManyToOne(targetEntity="utilisateur")
 	 * @JoinColumn(nullable=false, name="destinataire", referencedColumnName="id")
-   * @var utilisateur destinataire
+     * @var utilisateur destinataire
 	 */ 
 	public $destinataire;
 
 	/**	
-	 * @ManyToOne(targetEntity="utilisateur")
+	 * @OneToOne(targetEntity="utilisateur")
 	 * @JoinColumn(nullable=false, name="parent", referencedColumnName="id")
    * @var utilisateur parent	 
    */ 

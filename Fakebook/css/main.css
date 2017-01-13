@@ -19,7 +19,7 @@ header a:hover {
 }
 
 aside {
-	max-height: 90vh;
+	max-height: 80vh;
 	overflow-y: auto;
 }
 
@@ -27,7 +27,7 @@ aside {
 	padding-top: 5px;
 	background-color: #a8b9b6;
 	border-radius: 5px;
-	min-height: 100vh;
+	min-height: 99vh;
 }
 
 .thumbnail {

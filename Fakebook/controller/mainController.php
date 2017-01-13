@@ -26,32 +26,35 @@ class mainController
         $context->left_view = false;
         return context::SUCCESS;
     }
-
-
-    // @Author=PierreRudelou
-    public static function login($request, $context)
-    {
-        global $action;
-        if ($context->getSessionAttribute("currentUser") === false) {
-            if (isset($request['user'])) {
-                $user = utilisateurTable::getUserByLoginAndPass($request['user']['name'], $request['user']['password']);
-                if ($user == false) {
-                    $context->notif = "Erreur: User does not exist";
-                    $context->left_view = false;
-                    return context::ERROR;
-                }
-                $context->setSessionAttribute("currentUser", $user);
-                $context->notif = "Bonjour " . $context->getSessionAttribute("currentUser")->nom . "!";
-            } else {
-                $context->left_view = false;
-                return context::ERROR;
-            }
-        } else {
-            $context->notif = "Already signed in";
+ 
+ // @Author= Pierre Rudelou
+	public static function login($request, $context){
+    global $action; // to redirect
+    if ($context->getSessionAttribute("currentUser") === false){
+      if(isset($request['user'])) 
+      {
+        $user = utilisateurTable::getUserByLoginAndPass($request['user']['name'], $request['user']['password']);
+        if($user == false) {
+          $context->notif = "Erreur: User does not exist";
+          $context->left_view = false;
+          return context::ERROR;
         }
-        $action = 'index';
-        return context::SUCCESS;
+				$context->setSessionAttribute("currentUser", $user->id);
+        $context->notif = "Bonjour ".$user->nom."!";
+      }		
+
+  		else{
+        $context->left_view = false;
+  			return context::ERROR;
+  		}
+		}
+    else {
+      $context->notif = "Already signed in";
     }
+
+    $action = 'index';
+		return $context->executeAction($action, $request);
+	}
 
     // author = Gael Cuminal
     public static function logout($request, $context)
@@ -84,9 +87,61 @@ class mainController
             $user = $context->getSessionAttribute('currentUser');
         }
 
+<<<<<<< HEAD
         $context->user = $user;
         return $context::SUCCESS;
     }
+=======
+    else {
+      //Print current user's profile
+      $user = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
+    }
+
+    $context->user = $user;
+    return $context::SUCCESS;
+  }
+
+ // @Author= Pierre Rudelou
+  public static function sendmessage($request, $context){
+
+    global $action;
+
+    if($context->getSessionAttribute("currentUser") == false) {
+      //User not signed in
+      $context->notif = "You are not signed in!";
+      return $context::ERROR;
+    }
+
+    else {
+      //Print current user's profile
+      $expediteur = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
+
+      $destinataire = $request['message']['to'];
+      $texte= $request['message']['texte'];
+
+      $post = new post();
+      $post->texte = $texte;
+      $post->date  = date_create(date('Y-m-d H:i:s')); 
+
+      postTable::save($post);
+
+      // toDo image
+
+      $message = new message();
+      $message->emetteur = $expediteur;
+      $message->destinataire = utilisateurTable::getUserByIdentifiant($destinataire);
+      $message->post = $post;
+
+      messageTable::save($message);
+
+
+    }
+    $action ='profile';
+    $request['user']=$message->destinataire;
+    return $context->executeAction($action,$request);
+
+  }
+>>>>>>> 59a3fa1e0b53779682941af0e776404e00a96ffe
 }
 
 ?>

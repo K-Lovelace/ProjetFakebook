@@ -5,11 +5,13 @@
 <?php $destinataire = utilisateurTable::getUserById($message->destinataire) ?>
 
 <?php
-	if ($destinataire != false){
+	if ($destinataire != false && $destinataire != $emetteur){
 		?>
 			<br>
 			A :
-			<?= $destinataire->nom ?> <?= $destinataire->prenom ?> 
+			<a href="?action=profile&user=<?= $destinataire->id ?>"> 
+				<?= $destinataire->nom ?> <?= $destinataire->prenom ?> 
+			</a>
 			<?php
 	}
 ?>
@@ -17,7 +19,10 @@
 <?php
 ?>
 <br>
+<?php if ($post != NULL && $post->getTexte() != NULL && $post->getTexte() != ''){ ?>
 <?= $post->getTexte() ?>
+<?php } ?>
+
 <br>
 <br>
 

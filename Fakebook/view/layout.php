@@ -6,18 +6,17 @@
     <meta charset="utf-8">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
-          integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="lib/core/vendor/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/core/vendor/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/core/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <!-- SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
-    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
-            integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
-            crossorigin="anonymous"></script>
+    <script src="lib/core/vendor/tether/dist/js/tether.min.js"></script>
+    <script src="lib/core/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/start.js"></script>
 </head>
 <body>
@@ -26,11 +25,11 @@
 <?php } ?>
 <div class="container">
     <div class="row" id="content">
-        <header class="col-xs-12"><?php include $header_view; ?></header>
-        <aside class="col-md-3 hidden-md-down">
+        <header class="col-12"><?php include $header_view; ?></header>
+        <aside class="col-md-3 hidden-sm-down">
             <?php if ($left_view) include $left_view; ?>
         </aside>
-        <section class="col-xs-12 col-md-9">
+        <section class="col-12 col-md-9">
             <?php include $action_view; ?>
         </section>
     </div>
@@ -49,7 +48,7 @@
                 <?php include 'default/chat.php' ?>
             </div>
             <div class="modal-footer">
-                <form>
+                <form method="POST">
                     <input type="text" name="text" placeholder="Votre message...">
                     <button type="button" class="btn btn-primary">Envoyer</button>
                 </form>
