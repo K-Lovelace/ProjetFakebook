@@ -87,11 +87,6 @@ class mainController
             $user = $context->getSessionAttribute('currentUser');
         }
 
-<<<<<<< HEAD
-        $context->user = $user;
-        return $context::SUCCESS;
-    }
-=======
     else {
       //Print current user's profile
       $user = utilisateurTable::getUserById($context->getSessionAttribute('currentUser'));
@@ -141,7 +136,6 @@ class mainController
     return $context->executeAction($action,$request);
 
   }
->>>>>>> 59a3fa1e0b53779682941af0e776404e00a96ffe
 }
 
 ?>
