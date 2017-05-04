@@ -11,7 +11,7 @@
     		<img class='rounded img-fluid img-thumbnail <?= $user_class ?> ' src='images/jpp.jpg'>
     	<?php } ?>
 
-			<a href="?action=profile&user=<?= $user->id ?>"> <?= $user->nom ?> <?= $user->prenom ?> </a>
+			<a href="?action=profile&user=<?= $user->id ?>" class="ajax-link"> <?= $user->nom ?> <?= $user->prenom ?> </a>
 		<br>
 		<?= $user->getStatut() ?>
 		<?php } ?>

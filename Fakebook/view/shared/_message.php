@@ -25,11 +25,4 @@
 <?= $post->getTexte() ?>
 <?php } ?>
 
-<br>
-<br>
-
-Nombre de "j'aime" : <?= $message->aime ?>
-
-<br>
-
-
+<

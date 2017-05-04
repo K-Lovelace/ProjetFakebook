@@ -48,11 +48,14 @@ class mainController
     // author = Gael Cuminal
     public static function logout($request, $context)
     {
+        global $action;
         if ($context->getSessionAttribute("currentUser") !== NULL) {
             $context->setSessionAttribute("currentUser", NULL);
             $context->notif = "User was successfully logout";
-            return context::SUCCESS;
         }
+
+        $action = 'index';
+        return $context->executeAction($action, $request);
     }
 
     // author = Gael Cuminal
